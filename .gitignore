@@ -1,2 +1,12 @@
+api/__pycache__
 venv
-__pycache__
+api/venv
+.vscode
+.envrc
+venv
+embedded/.pio
+embedded/.vscode/.browse.c_cpp.db*
+embedded/.vscode/c_cpp_properties.json
+embedded/.vscode/launch.json
+embedded/.vscode/ipch
+embedded/include/env.h
