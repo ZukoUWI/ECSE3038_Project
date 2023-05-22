@@ -5,6 +5,8 @@ import requests
 import pydantic 
 from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
+from motor.motor_asyncio import AsyncIOMotorClient
+from dotenv import load_dotenv
 import re
 import motor.motor_asyncio
 import pytz
@@ -31,6 +33,7 @@ app.add_middleware(
 pydantic.json.ENCODERS_BY_TYPE[ObjectId] = str
 
 # Initializing MongoDB client using hidden URL
+load_dotenv() #Retrieves URL from hidden file
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient('MONGODB_STRING')
 mongo_db = mongo_client.iot_platform
 sensor_collection = mongo_db['sensor_readings']
